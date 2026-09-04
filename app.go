@@ -213,7 +213,7 @@ func (h *Host) refresh(ctx context.Context, resolver *net.Resolver, logger *zap.
 		for _, cAddr := range cAddrs {
 			fresh[cAddr] = struct{}{}
 		}
-		if c := logger.Check(zapcore.DebugLevel, "hostname lookup success"); c != nil {
+		if c := logger.Check(zapcore.DebugLevel, "hostname lookup succeeded"); c != nil {
 			strings := make([]string, 0, len(cAddrs))
 			for _, addr := range cAddrs {
 				strings = append(strings, addr.String())
